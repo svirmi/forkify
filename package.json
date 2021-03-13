@@ -8,7 +8,8 @@
   "license": "ISC",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "watch": "parcel watch index.html"
   },
   "dependencies": {
     "parcel-bundler": "1.12.3"

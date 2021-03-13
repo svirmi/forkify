@@ -125,22 +125,27 @@ const showRecipe = async function () {
   try {
     const res = await fetch(api);
     const data = await res.json();
-    console.log(res, data);
+    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+    let {
+      recipe
+    } = data.data;
+    recipe = {
+      id: recipe.id,
+      title: recipe.title,
+      publisher: recipe.publisher,
+      sourceUrl: recipe.source_url,
+      image: recipe.image_url,
+      servings: recipe.servings,
+      cookingTime: recipe.cooking_time,
+      ingredients: recipe.ingredients
+    };
+    console.log(recipe);
   } catch (err) {
     alert(err);
   }
 };
 
-showRecipe();
-
-const timeout = function (s) {
-  return new Promise(function (_, reject) {
-    setTimeout(function () {
-      reject(new Error(`Request took too long! Timeout after ${s} second`));
-    }, s * 1000);
-  });
-}; // https://forkify-api.herokuapp.com/v2
-///////////////////////////////////////
+showRecipe(); // https://forkify-api.herokuapp.com/v2
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -169,7 +174,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45153" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46091" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
