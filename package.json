@@ -1,10 +1,10 @@
 {
   "name": "forkify",
   "version": "1.0.0",
-  "description": "Jonas Schmedtmann Forkify app copy",
+  "description": "Jonas Schmedtmann Forkify app copy. Personal learning purpose.",
   "main": "index.html",
   "repository": "https://github.com/svirmi/forkify.git",
-  "author": "MS (Jonas Schmedtmann)",
+  "author": "Jonas Schmedtmann",
   "license": "ISC",
   "scripts": {
     "start": "parcel index.html",
