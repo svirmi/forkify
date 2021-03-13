@@ -1,0 +1,16 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Jonas Forkify app copy",
+  "main": "index.html",
+  "repository": "https://github.com/svirmi/forkify.git",
+  "author": "MS",
+  "license": "free as air",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
