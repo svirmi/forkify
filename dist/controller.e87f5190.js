@@ -118,12 +118,25 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"src/js/controller.js":[function(require,module,exports) {
-var recipeContainer = document.querySelector('.recipe');
+const recipeContainer = document.querySelector('.recipe');
+const api = 'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886';
 
-var timeout = function timeout(s) {
+const showRecipe = async function () {
+  try {
+    const res = await fetch(api);
+    const data = await res.json();
+    console.log(res, data);
+  } catch (err) {
+    alert(err);
+  }
+};
+
+showRecipe();
+
+const timeout = function (s) {
   return new Promise(function (_, reject) {
     setTimeout(function () {
-      reject(new Error("Request took too long! Timeout after ".concat(s, " second")));
+      reject(new Error(`Request took too long! Timeout after ${s} second`));
     }, s * 1000);
   });
 }; // https://forkify-api.herokuapp.com/v2
@@ -156,7 +169,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35065" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45153" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

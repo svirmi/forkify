@@ -86,4 +86,8 @@ fabric.properties
 .idea/sonarlint
 
 node_modules
+.cache
+.cache/
+.cache/*
+
 # End of https://www.gitignore.io/api/phpstorm
