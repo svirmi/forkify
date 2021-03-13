@@ -1,4 +1,6 @@
 import icons from '../img/icons.svg'
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
 
 const recipeContainer = document.querySelector('.recipe');
 const api = 'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886';
