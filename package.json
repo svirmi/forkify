@@ -1,16 +1,19 @@
 {
   "name": "forkify",
   "version": "1.0.0",
-  "description": "Jonas Forkify app copy",
+  "description": "Jonas Schmedtmann Forkify app copy",
   "main": "index.html",
   "repository": "https://github.com/svirmi/forkify.git",
-  "author": "MS",
-  "license": "free as air",
+  "author": "MS (Jonas Schmedtmann)",
+  "license": "ISC",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "1.12.3"
+  },
+  "devDependencies": {
+    "sass": "^1.32.8"
   }
 }
