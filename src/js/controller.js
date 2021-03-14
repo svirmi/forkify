@@ -8,6 +8,9 @@ const showRecipe = async function() {
   try {
 
     const id = window.location.hash.slice(1);
+
+    if(!id) return;
+
     const api = `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`;
 
     renderSpinner(recipeContainer);
@@ -140,8 +143,8 @@ const renderSpinner = function (parentEl) {
 
   parentEl.innerHTML = '';
   parentEl.insertAdjacentHTML('afterbegin', markup);
-}
+};
 
-window.addEventListener('hashchange', showRecipe)
+['hashchange', 'load'].forEach(ev => window.addEventListener(ev, showRecipe));
 
 // https://forkify-api.herokuapp.com/v2
