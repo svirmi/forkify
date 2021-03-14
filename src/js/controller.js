@@ -142,7 +142,6 @@ const renderSpinner = function (parentEl) {
   parentEl.insertAdjacentHTML('afterbegin', markup);
 }
 
-showRecipe();
-
+window.addEventListener('hashchange', showRecipe)
 
 // https://forkify-api.herokuapp.com/v2
