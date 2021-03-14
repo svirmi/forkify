@@ -3,13 +3,15 @@ import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 
 const recipeContainer = document.querySelector('.recipe');
-const api = 'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886';
 
 const showRecipe = async function() {
-
   try {
 
+    const id = window.location.hash.slice(1);
+    const api = `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`;
+
     renderSpinner(recipeContainer);
+
     // 1) load data from API
     const res = await fetch(api)
     const data = await res.json();
@@ -28,8 +30,6 @@ const showRecipe = async function() {
       cookingTime: recipe.cooking_time,
       ingredients: recipe.ingredients
     }
-
-    console.log(recipe)
 
     // 2) rendering data
     const markup = `
